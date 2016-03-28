@@ -1,46 +1,71 @@
-// Interfejs
-class Animal
+class Plant
 {
 public:
-    virtual void eat() = 0;
-    virtual void move() = 0;
+    virtual void grow()=0;
+    virtual void photosynthesis()=0;
 };
 
-// Klasa abstrakcyjna
-class Mammal : Animal
+class Crop : Plant
 {
 public:
-    virtual void drinkMilk()
+    virtual bool eatable()
     {
 
     };
 
-    void eat(){}
-    void move(){}
+    void grow(){}
+    void photosynthesis(){}
 };
 
-// Zwyczajna klasa
-class Human : Mammal
+class Bush : Plant
+{
+public:
+    virtual bool have_flowers()
+    {
+
+    };
+
+    void grow(){}
+    void photosynthesis(){}
+};
+
+class Potato : Crop
 {
 private:
-	char *name;
-	int birthDate;
+	char *size;
+	int harvest_day;
  
 public:
-	Human(char *name, int birthDate){};
-	void eat(){};
-	void move(){};
+	Potato(int size, char *harvest_month){}
+	void grow(){}
+	void photosynthesis(){}
 };
 
-class Dog : Mammal
+class Carrot : Crop
 {
-
+private:
+	char *nickname;
+	int length;
+ 
+public:
+	Carrot(char *nickname, int length){}
+	void grow(){}
+	void photosynthesis(){}
+};
+class Rhododendron : Bush
+{
+private:
+	int no_of_flowers;
+	char *colour;
+public:
+	Rhododendron(int no_of_flowers, char *colour){};
+	void grow(){}
+	void photosynthesis(){}
 };
 
 int main(int argc, char const *argv[])
  {
- 	Human janek = Human("Janek", 123);
- 	Human anna = Human("Anna", 123);
- 	Human zosia = Human("Zosia", 123);
- 	Dog burek = Dog();
+ 	Potato numberone = Potato(16, "July");
+ 	Carrot janusz = Carrot("Janusz", 25);
+ 	Rhododendron numerouno= Rhododendron(163, "Bright pink");
  } 
